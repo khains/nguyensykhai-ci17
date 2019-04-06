@@ -9,14 +9,24 @@ public class HomeworkSession3 {
      * @return
      */
     public static String findMaxLength(ArrayList<String> list) {
-        //TODO: bỏ return và hoàn thiện hàm
-        String longestStringList = list.get(0);
-        for (int i = 0; i < list.size(); i++) {
-            if (list.get(i).length() > longestStringList.length()) {
-                longestStringList = list.get(i);
+        String maxLength = null;
+        int max = 0;
+        if(list != null && list.size() > 0) {
+//            for (int i = 0; i < list.size(); i++) {
+//                String s = list.get(i);
+//                if(s != null && s.length() > max) {
+//                    maxLength = s;
+//                    max = s.length();
+//                }
+//            }
+            for(String s : list) { // foreach
+                if(s != null && s.length() > max) {
+                    maxLength = s;
+                    max = s.length();
+                }
             }
         }
-        return longestStringList;
+        return maxLength;
     }
 
     /**
@@ -25,12 +35,13 @@ public class HomeworkSession3 {
      * @return
      */
     public static int findTotalLength(ArrayList<String> list) {
-        //TODO: bỏ return và hoàn thiện hàm
-        int totalLenghtList = 0;
-        for (int i = 0; i < list.size(); i++) {
-            totalLenghtList = totalLenghtList + list.get(i).length();
+        int totalLength = 0;
+        for(String s : list) {
+            if(s != null) {
+                totalLength += s.length();
+            }
         }
-        return totalLenghtList;
+        return totalLength;
     }
 
     public static void main(String[] args) {
